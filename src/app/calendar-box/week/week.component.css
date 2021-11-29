@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
+
+:host {
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.calendar {
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.days_of_week {
+  font-size: 18px;
+  padding: 6px;
+}

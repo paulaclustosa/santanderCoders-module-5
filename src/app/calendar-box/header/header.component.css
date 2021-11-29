@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 24px;
+  justify-self: flex;
+  flex-grow: 2;
+}
+
+button {
+  font-family: 'Mochiy Pop P One', sans-serif;
+  font-size: 12px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 3px 6px;
+  margin-right: 5px;
+  transition: 300ms;
+}
+
+button:hover {
+  background-color: lightgrey ;
+}

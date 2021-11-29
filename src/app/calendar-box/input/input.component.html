@@ -1,0 +1,32 @@
+<button type="button" class="add">Add</button>
+
+<form [formGroup]="submitTask" (ngSubmit)="onSubmit()">
+  <label>
+    Title
+    <input type="text" required placeholder="Add a title." formControlName="title" />
+  </label>
+
+  <div class="error" *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+    <div *ngIf="title?.errors?.['required']">Please enter a title.</div>
+  </div>
+
+  <label>
+    Date
+    <input type="date" required formControlName="date" />
+  </label>
+
+  <div *ngIf="date?.invalid && (date?.dirty || date?.touched)">
+    <div class="error" *ngIf="date?.errors?.['required']">Please enter a date.</div>
+  </div>
+
+  <label>
+    Description
+    <input type="text" required placeholder="Add a task description." formControlName="description" />
+  </label>
+
+  <div *ngIf="description?.invalid && (description?.dirty || description?.touched)">
+    <div class="error" *ngIf="description?.errors?.['required']">Please enter a description.</div>
+  </div>
+
+  <button type="submit" [disabled]="!submitTask.valid">Save</button>
+</form>

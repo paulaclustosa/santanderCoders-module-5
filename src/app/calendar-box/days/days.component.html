@@ -1,0 +1,11 @@
+<div class="calendar">
+  <div class="days" *ngFor="let day of calendarDays">
+    {{ day | date: "d" }}
+    <div class="tasks" *ngFor="let task of findTasksInDate(day)">
+      {{ task.title }}
+      <button type="button" class="remove" (click)="removeItem(task.title)">
+        delete
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<header>
+  <h1>Agenda</h1>
+  <nav>
+    <button type="button" (click)="toPreviousMonth()">←</button>
+    <button type="button" (click)="toNextMonth()">→</button>
+    {{ dateReference | date: "MMMM" }} / {{ dateReference | date: "yyyy" }}
+  </nav>
+</header>
