@@ -56,8 +56,7 @@ export class CalendarBoxComponent implements OnInit {
   }
 
   removeItem(id: string): void {
-    console.log(id);
-    this.tasks = this.tasks.filter(task => task.title !== id)
+    this.tasks = this.tasks.filter(task => task.id !== id)
     this.saveToLocalStorage();
   }
 
@@ -72,7 +71,6 @@ export class CalendarBoxComponent implements OnInit {
 
   ngOnInit(): void {
     this.setCalendarDates(this.dateReference)
-    console.log(this.tasks)
   }
 
 }

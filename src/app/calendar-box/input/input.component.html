@@ -1,12 +1,13 @@
-<button type="button" class="add">Add</button>
+<button type="button" class="open-form" (click)="openForm(form, overlay)">Add</button>
 
-<form [formGroup]="submitTask" (ngSubmit)="onSubmit()">
+<form #form [formGroup]="submitTask" (ngSubmit)="onSubmit()" (submit)="closeForm(form, overlay)">
+  <button type=button class="close-form" (click)="closeForm(form, overlay)">x</button>
   <label>
     Title
     <input type="text" required placeholder="Add a title." formControlName="title" />
   </label>
 
-  <div class="error" *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+  <div class="error" *ngIf="title?.invalid && (date?.dirty || date?.touched)">
     <div *ngIf="title?.errors?.['required']">Please enter a title.</div>
   </div>
 
@@ -30,3 +31,4 @@
 
   <button type="submit" [disabled]="!submitTask.valid">Save</button>
 </form>
+<div #overlay class="overlay"></div>

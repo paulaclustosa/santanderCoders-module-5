@@ -3,7 +3,7 @@
     {{ day | date: "d" }}
     <div class="tasks" *ngFor="let task of findTasksInDate(day)">
       {{ task.title }}
-      <button type="button" class="remove" (click)="removeItem(task.title)">
+      <button type="button" class="remove" (click)="removeItem(task.id)">
         delete
       </button>
     </div>

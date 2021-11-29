@@ -12,6 +12,7 @@ import { parseISO } from 'date-fns';
 export class InputComponent implements OnInit {
 
   task: Task = {
+    id: '',
     title: '',
     date: new Date(),
     description: '',
@@ -20,17 +21,6 @@ export class InputComponent implements OnInit {
   @Output() onPostTasks = new EventEmitter<Task>();
 
   submitTask: FormGroup;
-
-  constructor() {
-    this.submitTask = new FormGroup({
-      'title': new FormControl(this.task.title,
-        [Validators.required]),
-      'date': new FormControl(this.task.date,
-        [Validators.required]),
-      'description': new FormControl(this.task.description,
-        [Validators.required]),
-    })
-  }
 
   get title() {
     return this.submitTask.get('title')
@@ -44,23 +34,32 @@ export class InputComponent implements OnInit {
     return this.submitTask.get('description')
   }
 
-  onSubmit() {
-    const dateAdjusted = parseISO(this.date?.value)
-    const task = { title: this.title?.value, date: dateAdjusted, description: this.description?.value }
-    this.onPostTasks.emit(task)
+  constructor() {
+    this.submitTask = new FormGroup({
+      'title': new FormControl(this.task.title,
+        [Validators.required]),
+      'date': new FormControl(this.task.date,
+        [Validators.required]),
+      'description': new FormControl(this.task.description,
+        [Validators.required]),
+    })
   }
 
+  openForm(form: HTMLElement, div: HTMLElement) {
+    form.classList.add("--is-open")
+    div.classList.add("--is-open")
+  }
 
+  closeForm(form: HTMLElement, div: HTMLElement) {
+    form.classList.remove("--is-open")
+    div.classList.remove("--is-open")
+  }
 
-  // sendTask(title: string, date: string, description: string): void {
-  //   const dateTypeDate = new Date(date);
-  //   const dateAdjusted = new Date(dateTypeDate.valueOf() + dateTypeDate.getTimezoneOffset() * 60 * 1000);
-  //   const task = { title: title, date: dateAdjusted, description: description }
-  //   this.onAddTask.emit(task)
-  // }
-
-  getTasks(): Array<Task> {
-    return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks") || '').map((task: any) => ({ ...task, date: new Date(task.date) })) : [];
+  onSubmit() {
+    const dateAdjusted = parseISO(this.date?.value)
+    const taskId = (Math.random() * 20).toString()
+    const task = { id: taskId, title: this.title?.value, date: dateAdjusted, description: this.description?.value }
+    this.onPostTasks.emit(task)
   }
 
   ngOnInit(): void {
