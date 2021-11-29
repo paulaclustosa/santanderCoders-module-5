@@ -1,5 +1,5 @@
 <app-input (onPostTasks)="postTasks($event)"></app-input>
-<app-header [dateReference]="dateReference" (changeMonth)="changeMonth($event)"></app-header>
+<app-header [dateReference]="dateReference" (onChangeMonth)="changeMonth($event)"></app-header>
 <app-week></app-week>
 <app-days [calendarDays]="calendarDates" [tasks]="tasks" (onRemoveItem)="removeItem($event)">
 </app-days>

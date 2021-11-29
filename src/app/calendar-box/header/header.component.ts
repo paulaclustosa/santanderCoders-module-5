@@ -8,16 +8,16 @@ import { getMonth, getYear } from 'date-fns';
 })
 export class HeaderComponent implements OnInit {
   @Input() dateReference!: Date;
-  @Output() changeMonth = new EventEmitter<number>();
+  @Output() onChangeMonth = new EventEmitter<number>();
 
   constructor() { }
 
   toPreviousMonth(): void {
-    this.changeMonth.emit(-1)
+    this.onChangeMonth.emit(-1)
   }
 
   toNextMonth(): void {
-    this.changeMonth.emit(1)
+    this.onChangeMonth.emit(1)
   }
 
   ngOnInit(): void {
