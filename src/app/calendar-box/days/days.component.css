@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300&family=Mochiy+Pop+P+One&family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
 
 :host {
-  font-family: 'Mochiy Pop P One', sans-serif;
+  font-family:'M PLUS 1 Code', sans-serif;
 }
 
 .calendar {
@@ -12,20 +12,29 @@
 }
 
 .days {
-  border: 1px solid black;
+  border: 1px solid transparent;
+  box-shadow: 0 3px 6px lightgrey;
   border-radius: 6px;
   font-size: 12px;
-  height: 100px;
+  min-height: 120px;
 }
 
 .tasks {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: lightgoldenrodyellow;
+  background-color: #FFEBA8;
 }
 
 .remove {
+  background-color: #FFEBA8;
   font-family: 'Mochiy Pop P One', sans-serif;
   font-size: 12px;
+  border: 1px solid transparent;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background-color: yellow;
 }

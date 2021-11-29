@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300&family=Mochiy+Pop+P+One&family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
 
 :host {
-  font-family: 'Mochiy Pop P One', sans-serif;
+  font-family:'M PLUS 1 Code', sans-serif;
 }
 
 .calendar {

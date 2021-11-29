@@ -29,6 +29,6 @@
     <div class="error" *ngIf="description?.errors?.['required']">Please enter a description.</div>
   </div>
 
-  <button type="submit" [disabled]="!submitTask.valid">Save</button>
+  <button class="submit-form" type="submit" [disabled]="!submitTask.valid">Save</button>
 </form>
 <div #overlay class="overlay"></div>

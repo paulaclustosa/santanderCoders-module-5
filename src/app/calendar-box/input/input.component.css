@@ -1,49 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300&family=Mochiy+Pop+P+One&family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
 
-button {
-  background-color:grey;
-  font-family: 'Mochiy Pop P One', sans-serif;
-  font-size: 12px;
-  color: black;
-  border: 1px solid white;
-  border-radius: 50%;
-  padding: 10px 8px;
-  transition: 300ms;
-  margin: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: lightgrey;
+:host {
+  font-family:'M PLUS 1 Code', sans-serif;
 }
 
 .open-form {
+  background-color: black;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  box-shadow: 0 3px 6px #333;
+  color: white;
+  cursor: pointer;
+  font-family:'M PLUS 1 Code', sans-serif;
+  font-size: 12px;
+  margin: 5px;
+  padding: 10px 8px;
   position: fixed;
   top: 12%;
-  box-shadow: 0 3px 6px #333;
+  transition: 250ms;
 }
 
-.close-form {
-  background-color: #93C8BE ;
+.open-form:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.submit-form {
+  background-color: black;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  color: white;
+  cursor: pointer;
+  font-family:'M PLUS 1 Code', sans-serif;
   font-size: 12px;
-  padding: 0;
-  border: none;
+  margin: 5px;
+  padding: 10px 8px;
+  transition: 300ms;
+}
+
+.submit-form:hover {
+  background-color: lightgrey;
+}
+
+
+.close-form {
   align-self: flex-end;
+  background-color: #93C8BE ;
+  border: none;
+  font-family:'M PLUS 1 Code', sans-serif;
+  font-size: 16px;
   margin: 0;
+  padding: 0;
 }
 
 form {
-  background-color: #93C8BE;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  padding: 12px;
-  transform: translate(-50%, -50%);
+  background-color: #93C8BE;
   border-radius: 6px;
   box-shadow: 0 3px 6px #333;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  padding: 12px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 11;
 }
 
@@ -74,8 +95,8 @@ label {
 }
 
 input {
-  width: 200px;
   margin-top: 5px;
+  width: 200px;
 }
 
 .error {

@@ -45,21 +45,25 @@ export class InputComponent implements OnInit {
     })
   }
 
-  openForm(form: HTMLElement, div: HTMLElement) {
+  openForm(form: HTMLElement, div: HTMLElement): void {
     form.classList.add("--is-open")
     div.classList.add("--is-open")
   }
 
-  closeForm(form: HTMLElement, div: HTMLElement) {
+  closeForm(form: HTMLElement, div: HTMLElement): void {
     form.classList.remove("--is-open")
     div.classList.remove("--is-open")
   }
 
-  onSubmit() {
+  onSubmit(): void {
     const dateAdjusted = parseISO(this.date?.value)
     const taskId = (Math.random() * 20).toString()
     const task = { id: taskId, title: this.title?.value, date: dateAdjusted, description: this.description?.value }
     this.onPostTasks.emit(task)
+  }
+
+  resetForm(): void {
+    this.submitTask
   }
 
   ngOnInit(): void {
